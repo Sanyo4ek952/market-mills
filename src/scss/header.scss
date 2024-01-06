@@ -1,5 +1,6 @@
 //====================================================================================================
 .header {
+	background-color: #f8f3f3;
 	// .header__top
 	&__top {
 	}
@@ -17,12 +18,15 @@
 		justify-content: space-between;
 	}
 	// .top-header__logo
-	&__logo-ibg {
-		padding-top: percent(220, 1590);
-		flex: 1 1 auto;
+	&__logo {
+		flex: 0 1 toRem(220);
 	}
 	// .top-header__logo-img
 	&__logo-img {
+		width: 100%;
+		@media (max-width: $mobile) {
+			width: 80%;
+		}
 	}
 	// .top-header__info
 	&__info {
@@ -37,7 +41,7 @@
 	// .top-header__number
 	&__number {
 		font-size: toRem(23);
-		@media (max-width: $mobileSmall) {
+		@media (max-width: em(616)) {
 			display: none;
 		}
 		&:nth-child(1) {
@@ -78,7 +82,7 @@
 
 	flex-grow: 0;
 	flex-shrink: 1;
-	@include adaptiveValue("flex-basis", 220, 150, 0, 1590, 768);
+	@include adaptiveValue("flex-basis", 220, 180, 0, 1590, 768);
 	// .serch__input
 	&__input {
 	}
@@ -91,11 +95,152 @@
 		font-size: toRem(12);
 	}
 }
+//========================================================================================================================================================
+
+.bootom-header {
+	background: #1c94c4;
+
+	width: 100%;
+	._header-scroll & {
+		position: fixed;
+		top: 0;
+	}
+	@media (max-width: $mobile) {
+		min-height: toRem(60);
+		display: flex;
+		align-items: center;
+	}
+
+	// .bootom-header__container
+	&__container {
+		width: 100%;
+		position: relative;
+	}
+
+	// .bootom-header__menu
+	&__menu {
+		@media (max-width: $mobile) {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+	// .bootom-header__buscet
+	&__buscet {
+		@media (min-width: $mobile) {
+			display: none;
+		}
+		font-weight: 600;
+		position: relative;
+		z-index: 3;
+		&::before {
+			font-size: toRem(25);
+			color: #f8f3f3;
+			position: relative;
+		}
+
+		span {
+			color: #000;
+			z-index: 10;
+			position: absolute;
+			top: -7px;
+			right: -4px;
+			font-size: toRem(14);
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: -10px;
+			right: -10px;
+			z-index: 9;
+			width: 20px;
+			height: 20px;
+			background-color: yellow;
+			display: block;
+			border-radius: 50%;
+		}
+	}
+}
+.menu {
+	@media (max-width: $mobile) {
+	}
+	// .menu__icon
+	&__icon {
+		div {
+			position: relative;
+			top: 0;
+			left: em(-80, 20);
+			font-size: toRem(20);
+			color: white;
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+	}
+	// .menu__body
+	&__body {
+		background: #1c94c4;
+		@media (max-width: $mobile) {
+			padding-top: toRem(40);
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: -100%;
+			transition: all 0.4s ease 0s;
+			.menu-open & {
+				left: 0;
+			}
+		}
+	}
+	// .menu__list
+	&__list {
+		display: flex;
+		height: 100%;
+		@media (max-width: $mobile) {
+			flex-direction: column;
+		}
+		.menu-open & {
+			top: 0;
+		}
+	}
+	// .menu__item
+	&__item {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		@media (max-width: $mobile) {
+			border-bottom: rgba(255, 255, 255, 0.3) dotted 1px;
+		}
+	}
+	// .menu__link
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: 1 1 auto;
+		height: toRem(60);
+		text-transform: uppercase;
+		font-weight: 700;
+		color: #fff;
+		border-right: rgba(255, 255, 255, 0.3) dotted 1px;
+		@media (max-width: $mobile) {
+			height: toRem(50);
+		}
+		&:first-child {
+			border-left: rgba(255, 255, 255, 0.3) dotted 1px;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #1486b3;
+			}
+		}
+	}
+}
+.icon-menu {
+}
 
 //====================================================================================================
 
 //Burger
-/*
+
 .icon-menu {
 	display: none;
 	@media (max-width: $mobile) {
@@ -116,7 +261,7 @@
 			position: absolute;
 			width: 100%;
 			height: toRem(2);
-			background-color: #000;
+			background-color: #fff;
 		}
 		&::before {
 			top: 0;
@@ -145,4 +290,3 @@
 		}
 	}
 }
-*/
