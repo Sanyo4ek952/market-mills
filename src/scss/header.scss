@@ -1,0 +1,148 @@
+//====================================================================================================
+.header {
+	// .header__top
+	&__top {
+	}
+	// .header__bottom
+	&__bottom {
+	}
+}
+.top-header {
+	padding: toRem(25) toRem(0);
+	// .top-header__container
+	&__container {
+		display: flex;
+		gap: toRem(20);
+		align-items: center;
+		justify-content: space-between;
+	}
+	// .top-header__logo
+	&__logo-ibg {
+		padding-top: percent(220, 1590);
+		flex: 1 1 auto;
+	}
+	// .top-header__logo-img
+	&__logo-img {
+	}
+	// .top-header__info
+	&__info {
+		font-size: toRem(14);
+		line-height: math.div(16, 14);
+		@media (max-width: $tablet) {
+			@media (max-width: em(820)) {
+				display: none;
+			}
+		}
+	}
+	// .top-header__number
+	&__number {
+		font-size: toRem(23);
+		@media (max-width: $mobileSmall) {
+			display: none;
+		}
+		&:nth-child(1) {
+			font-weight: 600;
+		}
+	}
+	// .top-header__number-tell
+	&__number-tell {
+		@include adaptiveValue("font-size", 23, 20, 0, 1590, 768);
+		font-weight: 600;
+		line-height: math.div(15, 14);
+	}
+	// .top-header__number-text
+	&__number-text {
+		color: #1c94c4;
+		line-height: math.div(18, 14);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: toRem(14);
+		gap: toRem(5);
+		&::before {
+			font-size: toRem(14);
+		}
+	}
+	// .top-header__serch
+	&__serch {
+	}
+}
+
+.input {
+}
+.bootom-header {
+}
+
+.serch {
+	position: relative;
+
+	flex-grow: 0;
+	flex-shrink: 1;
+	@include adaptiveValue("flex-basis", 220, 150, 0, 1590, 768);
+	// .serch__input
+	&__input {
+	}
+	// .serch__button
+	&__button {
+		position: absolute;
+		top: 50%;
+		right: 5px;
+		transform: translate(0, -50%);
+		font-size: toRem(12);
+	}
+}
+
+//====================================================================================================
+
+//Burger
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: toRem(30);
+		height: toRem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: toRem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - toRem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - toRem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - toRem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/
