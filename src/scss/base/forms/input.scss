@@ -12,8 +12,9 @@ textarea {
 	border-radius: 0 !important;
 	width: 100%;
 	display: block;
-	padding: 3px 0px;
+	padding: 6px 0px;
 	border-bottom: 1px solid #eee;
+	font-size: toRem(18);
 
 	&._form-focus {
 	}
@@ -23,7 +24,7 @@ textarea {
 .input[placeholder]:not([data-placeholder-nohiden]) {
 	&::placeholder {
 		transition: opacity 0.3s;
-		font-size: toRem(10);
+		font-size: toRem(14);
 	}
 	&:focus::placeholder {
 		opacity: 0;

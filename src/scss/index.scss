@@ -1,0 +1,45 @@
+//====================================================================================================
+.page {
+	height: 1000px;
+}
+//======================КОРЗИНА==============================================================================
+.buscet-page {
+	@media (max-width: $mobile) {
+		display: none;
+	}
+	position: fixed;
+	top: 50%;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: toRem(90);
+	height: toRem(75);
+	background-color: rgba(0, 0, 0, 0.3);
+	&::before {
+		font-size: toRem(35);
+		color: #f8f3f3;
+	}
+	span {
+		color: #000;
+		z-index: 10;
+		position: relative;
+		top: -15px;
+		right: -4px;
+		font-weight: 700;
+		font-size: toRem(14);
+	}
+	&::after {
+		content: "";
+		position: relative;
+		top: -15px;
+		right: 10px;
+		z-index: 9;
+		width: 20px;
+		height: 20px;
+		background-color: yellow;
+		display: block;
+		border-radius: 50%;
+	}
+}
+//========================================================================================================================================================
